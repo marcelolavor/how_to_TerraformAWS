@@ -3,10 +3,10 @@
 ## Step 01 - Development environment setup
 
 ### Assumptions
-- Linux OS will be here defined as the best fit for development environment setup to avoid lack compatibiliy some local open sources projects in Windows environment
-- As a matter of test, this challenge will create the development environment on top of a Ubuntu 22.04 standard docker image 
-- It is here considered that there is previously available a computer with a docker application installed and a dockerhub account created for final docker push step 
-- The docker environment access is granted as root in interactive mode (no 'sudo su -' demanded for terraform deployment)
+- Linux OS will be here defined as the best fit for development environment setup to avoid lack compatibiliy some local open sources lab in Windows environment
+- As a matter of test, this development environment is built on top of an Ubuntu 22.04 standard docker image very light
+- It is here considered that there is previously available a computer with a docker application installed and a dockerhub account created to push final docker image
+- The docker environment access is granted as root by interactive mode (no 'sudo su -' demanded for terraform deployment)
 
 ### Docker image acquisition
 
@@ -26,9 +26,9 @@
     
     > apt update && apt upgrade
 
-    **Install pre-requisites for hashicorp repository setup needs**
+    **Install some tools on top of this very light standard container to allow all further required deployments**
     
-    > apt install gpg docker sudo vi lsb-release
+    > apt install gpg docker sudo vi lsb-release git curl unzip
     
     **Setup Hashicorp repository**
     
@@ -40,14 +40,25 @@
     **Update linux distro and install Terraform application**
     > apt update && apt install terraform
 
-    **Install terraenv to deal with different terraform releases in case of need
-    > 
-
 ## Step 02 - Environment initial configutarion
 
+    **Install tfenv to deal with further Terraform new release smoothly**
+    > git clone --depth=1 https://github.com/tfutils/tfenv.git ~/utils/.tfenv
+    > echo 'export PATH="$HOME/utils/.tfenv/bin:$PATH"' >> ~/.bash_profile
+    > source ~ / .bash_profile
 
 ## Step 03 - Basics tests and phase approval
 
+    **List remote repo, deploy latest(again) and check release against remote repository
+    > terraform -v
+
+    > tfenv list-remote | head -2
+    > tfenv install latest
+    > tfenv list
+
+    ** Select and confirm terraform deployed release**
+    > tfenv use latest
+    > terraform -v
   
 
 #### Useful reference links
@@ -55,3 +66,5 @@
 - VSC - https://code.visualstudio.com/download
 - Terraform - https://www.terraform.io/downloads
 - Terraform Env - https://github.com/aaratn/terraenv
+- tfenv - https://github.com/tfutils/tfenv
+- tfvar - https://github.com/shihanng/tfvar

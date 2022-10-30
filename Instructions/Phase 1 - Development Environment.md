@@ -28,7 +28,7 @@
 
     **Install some tools on top of this very light standard container to allow all further required deployments**
     
-    > apt install gpg docker sudo vi lsb-release git curl unzip
+    > apt install gpg docker sudo vim lsb-release git curl unzip python3 python3.10-venv groff
     
     **Setup Hashicorp repository**
     
@@ -62,9 +62,8 @@
   
 
 #### Useful reference links
-- Git - https://git-scm.com/downloads
-- VSC - https://code.visualstudio.com/download
 - Terraform - https://www.terraform.io/downloads
-- Terraform Env - https://github.com/aaratn/terraenv
 - tfenv - https://github.com/tfutils/tfenv
 - tfvar - https://github.com/shihanng/tfvar
+- Git - https://git-scm.com/downloads
+- VSC - https://code.visualstudio.com/download

@@ -73,7 +73,7 @@ Along the steps, you will be able to figure out tecnical details about its imple
 
 16 - Full cycle tests and phase approval
 &nbsp;  
-&nbsp;   
+&nbsp;  
 
 ### [Phase 5 - Project conclusion](Instructions/Phase 5 - Project conclusion.md)
 

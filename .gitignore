@@ -42,4 +42,3 @@ terraform.rc
 
 # VSC files
 .vscode
-.vscode/settings.json

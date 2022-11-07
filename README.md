@@ -27,7 +27,7 @@ Along the steps, you will be able to figure out tecnical details about its imple
 &nbsp;  
 &nbsp;  
 
-### [Phase 1 - Development Environment](Instructions/Phase%201%20-%20Development%20Environment.mdnstructions/Phase 1 - Development Environment.md)
+### [Phase 1 - Development Environment](/Instructions/Phase 1 - Development Environment.md)
 
 01 - Development environment setup
 

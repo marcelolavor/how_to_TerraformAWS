@@ -1,6 +1,6 @@
 # how_to_TerraformAWS
 
-This HowTo will describes step-by-step an example about how to use Terraform with AWS in order to deploy a simple scenario of an IaC (Infrastructure as Code).
+This HowTo will describes step-by-step an example about how to use Terraform with AWS in order to deploy a real scenario of an IaC (Infrastructure as Code).
 
 Along the steps, you will be able to figure out tecnical details about its implementation and purposes. In case of any doubt, please feel free to contact me at marcelo.lavor@gmail.com.
 

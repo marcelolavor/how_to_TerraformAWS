@@ -39,3 +39,6 @@ terraform.rc
 # Ignore pem/ppk files
 *.pem
 *.ppk
+
+# VSC files
+.vscode

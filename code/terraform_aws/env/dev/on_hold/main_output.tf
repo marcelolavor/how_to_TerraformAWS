@@ -14,7 +14,7 @@ output "Private_instances_IP_addresses" {
 */
 
 /*
-output "Bastion_Host_IP" {
+output "Server_Host_IP" {
     value = [ "${aws_instance.pvt_ec2.*.private_ip}" ]
 }
 */

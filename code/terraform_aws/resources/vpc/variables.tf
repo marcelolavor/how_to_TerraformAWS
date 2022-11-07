@@ -56,7 +56,7 @@ variable "resource_Tags" {
 
 variable "Network_CIDR" {
   description = "Set the IP address configuration to be configured into VPC and all required network resources."
-  type        = string
+  type        = list(string)
   nullable    = false
 }
 

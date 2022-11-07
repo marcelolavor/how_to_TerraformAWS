@@ -1,6 +1,6 @@
 resource "aws_security_group_rule" "allow_ssh" {
   type = "ingress"
-  security_group_id=["aws_security_group.tf_asg_server_bastion.id","aws_security_group.tf_asg_webservers_web_secure.id","aws_security_group.tf_asg_webservers_web_simple.id"]
+  security_group_id=["aws_security_group.tf_asg_server.id","aws_security_group.tf_asg_webservers_web_secure.id","aws_security_group.tf_asg_webservers_web_simple.id"]
   from_port   = var.server_ssh_port
   to_port     = var.server_ssh_port
   protocol    = "tcp"
@@ -43,9 +43,9 @@ resource "aws_security_group_rule" "LB_rule" {
 resource "aws_security_group_rule" "allow_outgoing" {
   type = "egress"
   security_group_id=[
-    "aws_security_group.tf_asg_server_bastion.id",
-    "aws_security_group.tf_asg_webservers_web_secure.id",
-    "aws_security_group.tf_asg_webservers_web_simple.id"
+    "aws_security_group.tf_asg_server.id",
+    "aws_security_group.tf_asg_webservers.id",
+    "aws_security_group.tf_asg_secure_webservers.id"
     ]
   from_port   = 0
   to_port     = 0

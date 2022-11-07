@@ -15,11 +15,11 @@
 # Instances module
 ################################################################################
 
-module "asg-server-bastion" {
-  source = "../../resources/asg/server_bastion"
+module "asg-server" {
+  source = "../../resources/asg/server"
 
   Name         = var.Name
-  Network_CIDR = var.Network
+  Network_CIDR = var.Network_CIDR
   Image        = var.Image
   Tags         = var.Tags
 }
@@ -34,7 +34,7 @@ module "asg-server-bastion" {
 
 # }
 
-# module "ec2-bastion" {
+# module "ec2-server" {
 #   source = "../../resources/ec2"
 
 #   Name         = var.Name

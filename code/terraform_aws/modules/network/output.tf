@@ -2,6 +2,7 @@
 output "Network" {
   description = "Array containing the full resource object and attributes for all endpoints created into the VPC"
   value = {
+    Network_CIDR                        = var.Network_CIDR
     vpc_arn                             = module.vpc.vpc_arn
     vpc_owner_id                        = module.vpc.vpc_owner_id
     vpc_endpoints                       = module.vpc.vpc_endpoints

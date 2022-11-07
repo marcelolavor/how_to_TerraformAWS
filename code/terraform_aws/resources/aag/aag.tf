@@ -1,5 +1,5 @@
-resource "aws_autoscaling_group" "server_bastion_aag" {
-  launch_configuration = aws_launch_configuration.server_bastion_launch_config.id
+resource "aws_autoscaling_group" "server_aag" {
+  launch_configuration = aws_launch_configuration.server_launch_config.id
   availability_zones   = var.aws_azs
 
   min_size         = var.server_min_scale

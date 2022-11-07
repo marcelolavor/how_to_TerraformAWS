@@ -1,25 +1,11 @@
 ################################################################################
 # ASG variables declaration
 ################################################################################
-variable "server_ssh_port" {
-	description = "ssh port connection to the server"
-  type        = number
-	default     = 22
-}
 
 variable "resource_Tags" {
   description = "Dedicated tags to be set in the resources"
   type        = map(string)
-  default = {
-    Project     = "TBD"
-    Environment = "TBD"
-    Department  = "TBD"
-    Cost_Centre = "TBD"
-    Author      = "Marcelo Lavor"
-    Email       = "marcelo.lavor@gmail.com"
-    GithubRepo  = "TBD"
-    GithubOrg   = "TBD"
-  }
+  default = {}
 }
 
 

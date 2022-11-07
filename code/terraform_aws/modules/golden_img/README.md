@@ -3,6 +3,7 @@
 ## Module description
 Build a golden image manifest by Hashicorp Packer to be used by Terraform for instances creation on the private subnets.
 
+
 ## Packer input/output
 
 ### Input variables
@@ -10,6 +11,7 @@ Build a golden image manifest by Hashicorp Packer to be used by Terraform for in
 
 ### Output variables
 - Manifest_path (string, required).
+
 
 ## Terraform input/output
 

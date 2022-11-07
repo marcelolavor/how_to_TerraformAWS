@@ -1,0 +1,1 @@
+terraform apply -auto-approve -no-color -target=”module.network_module" -var-file="pre.auto.tfvars" -var="Name=terraformdemo"

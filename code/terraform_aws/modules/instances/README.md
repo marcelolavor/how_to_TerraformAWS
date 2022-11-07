@@ -1,7 +1,7 @@
 # Instances Module
 
 ## Module description
-Build a golden image manifest by Hashicorp Packer to be used by Terraform for instances creation on the private subnets.
+Create the required instances and a bastion host, application load balance, ssh key pairs and porper security groups to grant all requested accesses.
 
 ## Input variables
 - Network (module.Network.output.Network, required)

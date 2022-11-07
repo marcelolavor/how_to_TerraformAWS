@@ -57,3 +57,17 @@ Along the steps, you will be able to figure out tecnical details about its imple
 19 - Final test from scratch and additional adjustments if needed
 
 20 - Project conclusion and acceptance
+
+
+## References
+- Terraform Modules for AWS - https://github.com/terraform-aws-modules
+- AWS limits: https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html
+- Subnets limit per VPC: https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html
+- Variables: https://k21academy.com/terraform-iac/variables-in-terraform/
+- Data source: https://developer.hashicorp.com/terraform/language/data-sources
+- Shell provider: https://registry.terraform.io/providers/scottwinkler/shell/latest/docs/resources/shell_script_resource
+- Nullable variables: https://developer.hashicorp.com/terraform/language/values/variables?optInFrom=terraform-io#disallowing-null-input-values
+
+- Plan: https://developer.hashicorp.com/terraform/cli/commands/plan
+- Apply: https://developer.hashicorp.com/terraform/cli/commands/apply
+- Destroy: https://developer.hashicorp.com/terraform/cli/commands/destroy

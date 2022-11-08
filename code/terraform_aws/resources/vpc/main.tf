@@ -102,25 +102,24 @@ module "vpc_endpoints" {
     #   policy          = data.aws_iam_policy_document.dynamodb_endpoint_policy.json
     #   tags            = { Name = "dynamodb-vpc-endpoint" }
     # },
-    webserver = {
-      service             = "ec2"
-      private_dns_enabled = true
-      subnet_ids          =  flatten([module.vpc.private_subnets])
-      security_group_ids  = [aws_security_group.vpc_global_asg.id]
-      tags                = { Name = "${local.name}-${var.region}-ec2" }
-    },
-    server = {
-      service             = "ec2"
-      private_dns_enabled = false
-      subnet_ids          =  flatten([module.vpc.public_subnets[0]])
-      security_group_ids  = [aws_security_group.vpc_global_asg.id]
-      tags                = { Name = "${local.name}-${var.region}-server" }
-    },
+    # server1 = {
+    #   service             = "ec2"
+    #   private_dns_enabled = true
+    #   subnet_ids          =  flatten([module.vpc.private_subnets])
+    #   security_group_ids  = [aws_security_group.vpc_global_asg.id]
+    #   tags                = { Name = "${local.name}-${var.region}-ec2" }
+    # },
+    # server2 = {
+    #   service             = "ec2"
+    #   private_dns_enabled = false
+    #   subnet_ids          =  flatten([module.vpc.public_subnets[0]])
+    #   security_group_ids  = [aws_security_group.vpc_global_asg.id]
+    #   tags                = { Name = "${local.name}-${var.region}-server" }
+    # },
 
   }
-
   tags = merge(local.tags, {
-    Endpoint = "true"
+    Endpoint = true
   })
 }
 

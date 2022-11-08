@@ -5,9 +5,9 @@ variable "Name" {
   nullable    = false
 }
 
-variable "Network_CIDR" {
+variable "Network" {
   description = "Array containing the full resource object and attributes for all endpoints created into the VPC"
-  type        = list(string)
+  type        = map(string)
   nullable    = false
 }
 

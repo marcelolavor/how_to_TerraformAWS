@@ -15,11 +15,22 @@
 # Instances module
 ################################################################################
 
+# Creation of ASG (AWS Security Groups)
 module "asg-server" {
   source = "../../resources/asg/server"
 
   Name         = var.Name
-  Network_CIDR = var.Network_CIDR
+  Network      = var.Network
+  Image        = var.Image
+  Tags         = var.Tags
+}
+
+# Creation of AGG (AWS Autoscalling Groups)
+module "aag-server" {
+  source = "../../resources/aag"
+
+  Name         = var.Name
+  Network      = module.asg-server.Network
   Image        = var.Image
   Tags         = var.Tags
 }

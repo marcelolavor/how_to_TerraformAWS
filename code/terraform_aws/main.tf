@@ -24,8 +24,8 @@ module "network" {
 #   source = "./modules/instances"
 
 #   Name    = var.Name
-#   Network = module.network.outputs.Network
-#   Image   = module.golden_img.outputs.Image
+#   Network = module.network.Network
+#   Image   = "" #module.golden_img.outputs.Image
 #   Tags = merge(var.Tags, {
 #     Type = "VMs"
 #   })

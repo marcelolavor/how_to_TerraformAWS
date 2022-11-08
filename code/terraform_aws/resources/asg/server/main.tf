@@ -6,11 +6,12 @@ locals {
   name = "${var.Name}-${replace(basename(path.cwd), "_", "-")}"
 
   tags = merge(var.resource_Tags, var.Tags)
+
 }
 
 resource "aws_security_group" "server_asg" {
   description = "AWS Security Group to the servers"
-
+  vpc_id = var.Network.vpc_id
   tags = local.tags
 }
 
@@ -21,7 +22,7 @@ resource "aws_security_group_rule" "server_asg_rule_allow_ssh" {
   from_port         = var.server_ssh_port
   to_port           = var.server_ssh_port
   protocol          = "tcp"
-  cidr_blocks       = var.Network_CIDR
+  cidr_blocks       = [var.Network.Network_CIDR]
 }
 
 resource "aws_security_group_rule" "server_asg_rule_allow_outgoing" {

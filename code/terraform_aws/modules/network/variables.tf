@@ -23,3 +23,43 @@ variable "Tags" {
   nullable    = true
   default ={}
 }
+
+
+# --------------------------------------------------------------------------------------
+
+variable vpcs {
+  type = map
+  default = {
+    "tf" = {
+      "cidr" = vpc.cidr
+      "tags" = var.tags
+    }
+  }
+}
+
+variable subnets {
+  type = map
+  default = merge{vpc.private_subnets, vpc.public_subnets}
+}
+
+locals {
+  vpc_subnet_var = flatten([
+    for v in keys(var.vpcs) : [
+      for s in keys(var.subnets) : {
+        network_name   = v
+        tags           = var.vpcs[v]["tags"]
+        subnet_name    = format("%v_%s", v, s)
+        subnet_cidr    = cidrsubnet(var.vpcs[v]["cidr"], 8, var.subnets[s]["subnet"])
+        subnet_az      = element(local.my_azs, var.subnets[s]["subnet"] % 2)
+        subnet_rttable = var.subnets[s]["rttable"]
+      }
+    ]
+  ])
+  prefix = "${var.prefix}-${terraform.workspace}-tf"
+  common_tags = {
+    Environment = terraform.workspace
+    Project     = var.project
+    ManagedBy   = "Terraform"
+  }
+  my_azs = slice(data.aws_availability_zones.azs.names, 0, 2)
+}

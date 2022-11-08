@@ -99,6 +99,7 @@ Along the steps, you will be able to figure out tecnical details about its imple
 - Data source: https://developer.hashicorp.com/terraform/language/data-sources
 - Shell provider: https://registry.terraform.io/providers/scottwinkler/shell/latest/docs/resources/shell_script_resource
 - Nullable variables: https://developer.hashicorp.com/terraform/language/values/variables?optInFrom=terraform-io#disallowing-null-input-values
+- Terraform debug and variable validation - https://spacelift.io/blog/terraform-debug
 
 - Plan: https://developer.hashicorp.com/terraform/cli/commands/plan
 - Apply: https://developer.hashicorp.com/terraform/cli/commands/apply

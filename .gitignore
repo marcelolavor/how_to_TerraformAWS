@@ -42,3 +42,6 @@ terraform.rc
 
 # VSC files
 .vscode
+
+# Ignore terraform log file
+terraform.txt

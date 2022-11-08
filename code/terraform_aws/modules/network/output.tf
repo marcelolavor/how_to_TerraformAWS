@@ -7,6 +7,9 @@ output "Network" {
   })
 }
 
+    # vpc_subnet_var                                = local.vpc_subnet_var
+    # vpc_azs                             = local.my_azs
+
 # # All information regarding the VPC,subnets and any existing settings and resources related to the creation and configuration of networking in this module.
 # output "Network" {
 #   description = "Array containing the full resource object and attributes for all endpoints created into the VPC"
